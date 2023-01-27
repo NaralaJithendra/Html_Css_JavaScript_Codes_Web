@@ -1,0 +1,24 @@
+body 
+{
+    text-align: center;
+    color: green;
+    background-image: url('https://thumbs.dreamstime.com/z/calculator-icon-brown-background-elegant-style-modern-design-infographic-calculator-icon-brown-background-114000183.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+}
+input{
+    
+    color:Red;
+    background-color:aqua;
+    padding: 10px;
+}
+button{
+    animation: forwards;
+}
+h3{
+    text-align: down center;
+}
+img{
+	width:22%;
+}
