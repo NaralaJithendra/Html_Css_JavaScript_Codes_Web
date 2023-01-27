@@ -1,6 +1,6 @@
 # Jithendra Narala <img src="https://github.com/NaralaJithendra/Html_Css_JavaScript_Codes_Web/blob/main/Button%20Caliculator/Hi.gif" width="30px">
 <p align="center">
-  <h2><i><b>Button Caliculator Output</i></b></h2>
+  <h2><i><b>Personal Profile Output</i></b></h2>
   <a href="https://github.com/NaralaJithendra/Html_Css_JavaScript_Codes_Web/tree/main/Personal%20Profile">
     <img src="https://github.com/NaralaJithendra/Html_Css_JavaScript_Codes_Web/blob/main/Personal%20Profile/output.png" alt="Output" target="_blank" style="vertical-align:top margin:6px 4px" height="auto" width="auto">
   </a>
