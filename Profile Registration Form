@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profile Registration Form</title>
+<style>
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.input-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.add-button,
+.delete-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-button:hover,
+.delete-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #007aad;
+}
+
+.error-message {
+  color: #ff0000;
+  margin-top: 5px;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <form id="registrationform" name="add" action="/profile.com/final" method="GET">
+      <div class="form-group">
+        <label class="label" for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname" class="input" placeholder="Enter your first name" required/>
+      </div>
+      <div class="form-group">
+        <label class="label" for="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname" class="input" placeholder="Enter your last name" required/>
+      </div>
+      <div class="form-group">
+        <label class="label" for="dob">Date of Birth</label>
+        <input type="text" name="dob" id="dob" class="input" placeholder="DD/MM/YYYY" required/>
+      </div>
+      <div class="form-group">
+        <label class="label">Gender</label>
+        <label><input type="radio" name="gender" value="male" checked> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="transgender"> Transgender</label>
+      </div>
+      <div class="form-group">
+        <label class="label" for="number">Mobile Number</label>
+        <input type="text" name="number" id="number" class="input" placeholder="99xxxxxx99" />
+      </div>
+      <div class="form-group">
+        <label class="label" for="email">Email</label>
+        <input type="email" name="email" id="email" class="input" placeholder="Enter your Email" required />
+      </div>
+      <div class="form-group">
+        <p>Education Details:</p>
+        <table class="table" id="myTable">
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Qualification</th>
+              <th>Year</th>
+              <th>Percentage</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="institution" required></td>
+              <td>
+                <select name="qualification" class="input-select" required>
+                  <option value="">--Select--</option>
+                  <option value="SSC">SSC</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Diploma">Diploma</option>
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="Other">Other</option>
+                </select>
+              </td>
+              <td><input type="text" name="year" required></td>
+              <td><input type="text" name="percentage" required></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="add-button" onclick="myFunction()">Add</button>
+        <button type="button" class="delete-button" id="deleteButton" onclick="myDeleteFunction()">Delete</button>
+      </div>
+      <input type="submit" name="submit" value="Submit" class="submit-button">
+    </form>
+  </div>
+
+  <script>
+    function myFunction() {
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(-1);
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+
+      cell1.innerHTML = `<input type="text" name="institution" required>`;
+      cell2.innerHTML = `<select name="qualification" class="input-select" required>
+        <option value="">--Select--</option>
+        <option value="SSC">SSC</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Diploma">Diploma</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="Other">Other</option>
+      </select>`;
+      cell3.innerHTML = `<input type="text" name="year" required>`;
+      cell4.innerHTML = `<input type="text" name="percentage" required>`;
+      cell5.innerHTML = `<button type="button" class="delete-button" onclick="deleteRow(this)">Delete</button>`;
+
+      // Show the Delete button
+      var deleteButton = document.getElementById("deleteButton");
+      deleteButton.style.display = "inline-block";
+    }
+
+    function myDeleteFunction() {
+      var table = document.getElementById("myTable");
+      var rowCount = table.rows.length;
+
+      if (rowCount > 2) {
+        table.deleteRow(rowCount - 1);
+      }
+
+      // Hide the Delete button if there's only one row (excluding the heading row)
+      var deleteButton = document.getElementById("deleteButton");
+      if (rowCount <3) {
+        deleteButton.style.display = "none";
+      }
+    }
+
+    function deleteRow(button) {
+      var row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  </script>
+</body>
+</html>
